@@ -4,7 +4,7 @@ import { Badge } from "./ui/badge"
 import { Card, CardContent } from "./ui/card"
 import { useEffect, useState } from "react"
 
-export const Skills = () => {
+const Skills = () => {
 
   const [skillsCategories, setSkillsCategories] = useState<SkillsCategoryModel[]>([])
   const [_, setResponseError] = useState<string | null>(null)
@@ -70,3 +70,5 @@ export const Skills = () => {
     </section>
   )
 }
+
+export default Skills
