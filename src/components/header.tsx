@@ -33,7 +33,7 @@ export default function Header() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-serif font-black text-primary-foreground">Alex Johnson</h1>
+            <h1 className="text-xl font-serif font-black text-primary-foreground">Lungani Thabethe</h1>
           </div>
 
           <nav className="hidden md:block">

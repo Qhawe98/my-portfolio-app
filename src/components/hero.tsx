@@ -8,7 +8,7 @@ export default function Hero() {
         <div className="max-w-4xl mx-auto">
           <img
             src="/developer-headshot.png"
-            alt="Alex Johnson"
+            alt="Lungani Thabethe"
             className="w-32 h-32 rounded-full mx-auto mb-8 border-4 border-primary shadow-lg"
           />
 

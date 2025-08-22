@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="text-xl font-serif font-black mb-4">Alex Johnson</h3>
+              <h3 className="text-xl font-serif font-black mb-4">Lungani Thabethe</h3>
               <p className="text-primary-foreground/80 leading-relaxed">
                 Full Stack Developer passionate about creating digital experiences that make a difference.
               </p>
@@ -57,7 +57,7 @@ export default function Footer() {
 
           <div className="border-t border-primary-foreground/20 pt-8 text-center">
             <p className="text-primary-foreground/80 flex items-center justify-center gap-2">
-              Made with <Heart className="text-accent" size={16} /> by Alex Johnson
+              Made with <Heart className="text-accent" size={16} /> by Lungani Thabethe
             </p>
             <p className="text-primary-foreground/60 text-sm mt-2">© 2024 All rights reserved.</p>
           </div>

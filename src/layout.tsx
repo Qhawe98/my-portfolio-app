@@ -17,7 +17,7 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
-  title: "Alex Johnson - Full Stack Developer",
+  title: "Lungani Thabethe - Full Stack Developer",
   description: "Modern portfolio showcasing full-stack development skills and creative projects",
     generator: 'v0.app'
 }
