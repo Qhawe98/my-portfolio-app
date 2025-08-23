@@ -7,7 +7,7 @@ import supabase from "../lib/supabase"
 import type { ProjectModel } from "../models/Project"
 
 
-export default function Projects() {
+const Projects = () => {
   const [projects, setProjects] = useState<ProjectModel[]>([])
 
   useEffect(() => {
@@ -108,3 +108,5 @@ export default function Projects() {
     </section>
   )
 }
+
+export default Projects

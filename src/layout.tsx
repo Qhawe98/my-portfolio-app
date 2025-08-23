@@ -22,14 +22,16 @@ export const metadata: Metadata = {
     generator: 'v0.app'
 }
 
-export default function RootLayout({
+const RootLayout =({
   children,
 }: {
   children: React.ReactNode
-}) {
+}) =>{
   return (
     <html lang="en" className={`${openSans.variable} ${montserrat.variable} antialiased`}>
       <body>{children}</body>
     </html>
   )
 }
+
+export default RootLayout

@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { Badge } from "./ui/badge"
 
-export default function Experience() {
+const Experience = () => {
   const experiences = [
     {
       title: "Senior Full Stack Developer",
@@ -69,3 +69,5 @@ export default function Experience() {
     </section>
   )
 }
+
+export default Experience

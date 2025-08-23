@@ -1,7 +1,7 @@
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
 import { Button } from "./ui/button"
 
-export default function Hero() {
+const Hero = () => {
   return (
     <section className="min-h-screen flex items-center justify-center bg-background pt-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -55,3 +55,5 @@ export default function Hero() {
     </section>
   )
 }
+
+export default Hero

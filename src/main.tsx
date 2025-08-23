@@ -10,7 +10,7 @@ import Projects from "./components/projects";
 import Skills from "./components/skills";
 import "./index.css"; // if using Tailwind
 
-function Home() {
+const Home = () => {
   return (
     <main className="min-h-screen">
       <Header />
