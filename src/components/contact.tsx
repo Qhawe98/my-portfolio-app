@@ -10,7 +10,7 @@ import { Textarea } from "./ui/textarea"
 import { Mail, Phone, MapPin, Send } from "lucide-react"
 import sendCustomEmail from "../lib/emailjs"
 import supabase from "../lib/supabase"
-import type { ContactModel } from "../models/ContactModel"
+import type { ContactModel } from "../models/contactModel"
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -40,6 +40,8 @@ const Contact = () => {
       const latestContact: ContactModel = data?.[0]
       if (latestContact) {
         setContactInfo({
+          name: latestContact.name ?? "Let's Work Together",
+          description: latestContact.description ?? "Feel free to reach out for any inquiries or collaborations. I'm always open to discussing new projects and opportunities.",
           email: latestContact.email ?? "No Email Set",
           number: latestContact.number ?? "No Phone Number Set",
           location: latestContact.location ?? "No Location Set",

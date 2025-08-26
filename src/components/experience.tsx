@@ -1,33 +1,52 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { Badge } from "./ui/badge"
+import { useEffect, useState } from "react"
+import supabase from "../lib/supabase"
+import type { ErrorModel } from "../models/errorModel"
+import type { ExperienceModel } from "../models/experient"
 
 const Experience = () => {
-  const experiences = [
-    {
-      title: "Senior Full Stack Developer",
-      company: "TechCorp Solutions",
-      period: "2022 - Present",
-      description:
-        "Lead development of enterprise web applications using React, Node.js, and AWS. Mentored junior developers and implemented CI/CD pipelines.",
-      technologies: ["React", "Node.js", "AWS", "PostgreSQL", "Docker"],
-    },
-    {
-      title: "Frontend Developer",
-      company: "Digital Agency Pro",
-      period: "2020 - 2022",
-      description:
-        "Developed responsive web applications and collaborated with design teams to create pixel-perfect user interfaces for various clients.",
-      technologies: ["Vue.js", "TypeScript", "Sass", "Webpack", "Figma"],
-    },
-    {
-      title: "Junior Web Developer",
-      company: "StartupXYZ",
-      period: "2019 - 2020",
-      description:
-        "Built and maintained company website and internal tools. Gained experience in full-stack development and agile methodologies.",
-      technologies: ["JavaScript", "PHP", "MySQL", "Bootstrap", "Git"],
-    },
-  ]
+
+  const [experience, setExperience] = useState<ExperienceModel[]>([])
+  const [_, setError] = useState<ErrorModel>({ message: "", status: undefined })
+
+  const formatMonthYear = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleString('en-US', { month: 'short', year: 'numeric' });
+  }
+
+
+  useEffect(() => {
+    const fetchExperience = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('ExperienceHistory')
+          .select('*')
+          .order('startDate', { ascending: false })
+
+        if (error) {
+          throw console.error('Error fetching experience data:', error)
+        }
+
+        if (data) {
+          setExperience(data as ExperienceModel[])
+          setError({ message: "", status: undefined })
+        }
+      } catch (error: any) {
+        setError(error?.message)
+      }
+    }
+
+    fetchExperience()
+  }, [])
+
+  const experiences = experience.map((exp) => ({
+    title: exp.name || "Unknown Title",
+    company: exp.employer || "Unknown Company",
+    period: exp.isPresent ? `${formatMonthYear(exp.startDate)} - Present` : `${formatMonthYear(exp.startDate)} - ${formatMonthYear(exp.endDate)}`,
+    description: exp.description || "No description available.",
+    technologies: exp.skills ? exp.skills : ['Not specified'],
+  }))
 
   return (
     <section id="experience" className="py-20 bg-background">
@@ -42,21 +61,21 @@ const Experience = () => {
               <Card key={index} className="hover:shadow-lg transition-shadow duration-300">
                 <CardHeader>
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                    <CardTitle className="text-xl font-serif font-black text-foreground">{exp.title}</CardTitle>
+                    <CardTitle className="text-xl font-serif font-black text-foreground">{exp.title ?? 'No Specified'}</CardTitle>
                     <Badge variant="outline" className="border-primary text-primary w-fit">
                       {exp.period}
                     </Badge>
                   </div>
-                  <p className="text-lg font-medium text-accent">{exp.company}</p>
+                  <p className="text-lg font-medium text-accent">{exp.company ?? 'No Specified'}</p>
                 </CardHeader>
 
                 <CardContent className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
+                  <p className="text-muted-foreground leading-relaxed">{exp.description ?? 'No Specified'}</p>
 
                   <div className="flex flex-wrap gap-2">
                     {exp.technologies.map((tech, techIndex) => (
                       <Badge key={techIndex} variant="secondary" className="bg-primary/10 text-primary">
-                        {tech}
+                        {tech ?? 'No Specified'}
                       </Badge>
                     ))}
                   </div>

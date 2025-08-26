@@ -4,7 +4,7 @@ import { Button } from "./ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
 import { useEffect, useState } from "react"
 import supabase from "../lib/supabase"
-import type { ProjectModel } from "../models/Project"
+import type { ProjectModel } from "../models/project"
 
 
 const Projects = () => {

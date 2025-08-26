@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import type { AboutModel } from "../models/AboutModel"
 import { Card, CardContent } from "./ui/card"
 import supabase from "../lib/supabase"
+import type { AboutModel } from "../models/aboutModel"
 
 const About = () => {
 
@@ -60,7 +60,7 @@ const About = () => {
             </div>
 
             <div className="relative">
-              <img src={aboutData?.image} alt="Lungani's picture" className="rounded-lg shadow-xl w-full" />
+              <img src={aboutData?.image} alt="Lungani's picture" className="rounded-lg shadow-xl w-full h-[50%]" />
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-accent rounded-full flex items-center justify-center">
                 <span className="text-accent-foreground font-serif font-black text-lg">LT</span>
               </div>
