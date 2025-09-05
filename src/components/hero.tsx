@@ -6,9 +6,9 @@ const Hero = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
           <img
-            src="/lungani_headshot_2.jpg"
+            src="https://ogiextpgimoisgrotajn.supabase.co/storage/v1/object/public/Images/lungani_headshot_1.jpg"
             alt="Lungani Thabethe"
-            className="w-45 h-70 rounded-full mx-auto mb-8 border-4 border-primary shadow-lg rotate-10"
+            className="w-35 h-70 rounded-full mx-auto mb-8 border-4 border-primary shadow-lg rotate-10"
           />
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-black text-foreground mb-6">
@@ -26,7 +26,7 @@ const Hero = () => {
             <a href="https://www.linkedin.com/in/lunganithabethe/" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
               <Linkedin size={24} />
             </a>
-            <a href="mailto:lunganiofficial@example.com" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+            <a href="mailto:lunganiofficial@gmail.com" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
               <Mail size={24} />
             </a>
           </div>
