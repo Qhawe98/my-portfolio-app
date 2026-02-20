@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "build": "tsc",
     "start": "ts-node prisma/prisma.server.ts",
     "dev": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' prisma/prisma.server.ts",
     "lint": "eslint .",
